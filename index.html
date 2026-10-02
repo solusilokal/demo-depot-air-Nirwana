@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depot Air Isi Ulang Nirwana - Solusi Air Minum Bersih & Higienis Palangka Raya</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Depot Air Isi Ulang Nirwana menyediakan layanan air minum isi ulang higienis, bersih, dan menyegarkan di Palangka Raya. Tersedia air mineral, RO, dan layanan antar jemput galon. Pesan sekarang!">
+    <meta name="keywords" content="Depot Air Isi Ulang, Air Minum Palangka Raya, Air Galon Higienis, Air RO, Air Mineral Palangka Raya, Depot Air Nirwana, Layanan Antar Air Galon">
+    <meta name="author" content="Depot Air Isi Ulang Nirwana">
+    <link rel="icon" type="image/webp" href="gambarasset/favicon.ico">
+    
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Depot Air Isi Ulang Nirwana - Bersih & Higienis">
+    <meta property="og:description" content="Pesan air galon isi ulang dengan proses terstandarisasi, bersih, dan harga terjangkau di Palangka Raya. Layanan antar siap sedia.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0ea5e9/ffffff?text=Depot+Air+Nirwana"> <!-- Placeholder for OG Image -->
+    <meta property="og:url" content="#">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration for Custom Colors & Fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9', // Sky Blue
+                        secondary: '#38bdf8', // Light Blue
+                        accent: '#10b981', // Green for fresh feel
+                        softblue: '#f0f9ff',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS for Animations and Specific Tweaks -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem; /* Menyesuaikan dengan tinggi navbar (h-20) agar konten tidak tertutup */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* Smooth Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Subtle Gradient Backgrounds */
+        .bg-gradient-soft {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        
+        /* Glassmorphism for Navbar */
+        .glass-nav {
+            background: rgba(240, 249, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 border-b-2 border-sky-200 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#beranda" class="flex-shrink-0 flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer">
+                    <img src="gambarasset/logo.webp" alt="Logo Depot Air Isi Ulang Nirwana" class="h-10 w-10 rounded object-cover">
+                    <span class="font-heading font-bold text-xl text-dark hidden sm:block">Depot Air Nirwana</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#beranda" class="text-slate-600 hover:text-primary font-medium transition">Beranda</a>
+                    <a href="#tentang" class="text-slate-600 hover:text-primary font-medium transition">Tentang Kami</a>
+                    <a href="#layanan" class="text-slate-600 hover:text-primary font-medium transition">Layanan & Harga</a>
+                    <a href="#fasilitas" class="text-slate-600 hover:text-primary font-medium transition">Fasilitas</a>
+                    <a href="#faq" class="text-slate-600 hover:text-primary font-medium transition">FAQ</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex">
+                    <a href="https://wa.me/6289529605601" target="_blank" class="bg-primary hover:bg-sky-600 text-white px-6 py-2.5 rounded-full font-medium shadow-md shadow-sky-200 transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="fab fa-whatsapp text-lg"></i> Pesan Sekarang
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 shadow-lg absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#beranda" class="block px-3 py-3 text-slate-600 hover:bg-softblue hover:text-primary rounded-md font-medium">Beranda</a>
+                <a href="#tentang" class="block px-3 py-3 text-slate-600 hover:bg-softblue hover:text-primary rounded-md font-medium">Tentang Kami</a>
+                <a href="#layanan" class="block px-3 py-3 text-slate-600 hover:bg-softblue hover:text-primary rounded-md font-medium">Layanan & Harga</a>
+                <a href="#fasilitas" class="block px-3 py-3 text-slate-600 hover:bg-softblue hover:text-primary rounded-md font-medium">Fasilitas</a>
+                <a href="#faq" class="block px-3 py-3 text-slate-600 hover:bg-softblue hover:text-primary rounded-md font-medium">FAQ</a>
+                <a href="https://wa.me/6289529605601" target="_blank" class="block px-3 py-3 mt-4 text-center bg-primary text-white rounded-md font-medium flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden flex items-center justify-center min-h-[80vh]">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="gambarasset/hero.webp" alt="Background Depot Air" class="w-full h-full object-cover">
+            <!-- Kurangi opacity dari bg-white/80 menjadi bg-white/60 atau bg-white/50 -->
+            <div class="absolute inset-0 bg-white/50 backdrop-blur-sm"></div>
+            <!-- Subtle gradient overlay on top of blur -->
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/40"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            
+            <!-- Hero Text Centered -->
+            <div class="reveal">
+                <div class="inline-block px-5 py-2 rounded-full bg-white/80 backdrop-blur shadow-sm text-primary font-semibold text-sm mb-8 border border-sky-100">
+                    <i class="fas fa-tint mr-2 animate-pulse"></i> Air Bersih, Sehat & Higienis
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white mb-6 drop-shadow-md [-webkit-text-stroke:1.5px_#38bdf8]">
+                    Kesegaran Murni untuk <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary [-webkit-text-stroke:1.5px_white]">Keluarga Anda</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-700 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Depot Air Isi Ulang Nirwana menyediakan air minum berkualitas dengan proses filtrasi modern. Praktis, harga terjangkau, dan siap antar langsung ke depan pintu Anda di Palangka Raya.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="https://wa.me/6289529605601" target="_blank" class="w-full sm:w-auto bg-primary hover:bg-sky-600 text-white px-8 py-3.5 rounded-full font-semibold shadow-lg shadow-sky-200/50 transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-xl"></i> Pesan Air Sekarang
+                    </a>
+                    <a href="#layanan" class="w-full sm:w-auto bg-white/90 hover:bg-white text-slate-800 border-2 border-slate-200 px-8 py-3.5 rounded-full font-semibold shadow-md transition flex items-center justify-center backdrop-blur-sm">
+                        Lihat Harga & Layanan
+                    </a>
+                </div>
+                
+                <!-- Quick Stats Centered -->
+                <div class="mt-12 flex items-center justify-center gap-8 text-sm text-slate-800 font-semibold">
+                    <div class="flex items-center gap-3 bg-white/80 px-4 py-2 rounded-xl backdrop-blur-md border border-white/60 shadow-md">
+                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-accent">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Proses Higienis</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/80 px-4 py-2 rounded-xl backdrop-blur-md border border-white/60 shadow-md">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-primary">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <span>Layanan Antar</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Kenapa Memilih Kami -->
+    <section class="py-20 bg-white" id="tentang">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Kenapa Memilih <span class="text-primary">Nirwana?</span></h2>
+                <p class="text-slate-600">Kami berkomitmen memberikan layanan terbaik dengan mengutamakan kebersihan, kecepatan, dan kualitas air minum untuk kebutuhan harian Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg hover:border-sky-100 transition-all duration-300 reveal group">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Filtrasi Modern</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Menggunakan teknologi penyaringan bertahap untuk memastikan air bebas kotoran dan jernih.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg hover:border-sky-100 transition-all duration-300 reveal delay-100 group">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition">
+                        <i class="fas fa-pump-soap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Pencucian Galon Higienis</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Setiap galon dicuci bersih luar dan dalam sebelum diisi ulang untuk menjaga sterilisasi wadah.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg hover:border-sky-100 transition-all duration-300 reveal delay-200 group">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Layanan Antar Cepat</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Tidak perlu repot angkat galon, kurir kami siap mengantar pesanan langsung ke lokasi Anda.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg hover:border-sky-100 transition-all duration-300 reveal group">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Harga Terjangkau</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Menawarkan kualitas air terbaik dengan harga yang bersahabat untuk kebutuhan rumah tangga & bisnis.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg hover:border-sky-100 transition-all duration-300 reveal delay-100 group">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-accent text-2xl mb-6 group-hover:scale-110 group-hover:bg-accent group-hover:text-white transition">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Area Depot Bersih</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Lingkungan pengisian dijaga kebersihannya untuk mencegah kontaminasi dari luar.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg hover:border-sky-100 transition-all duration-300 reveal delay-200 group">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Pelayanan Ramah</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Staf kami melayani dengan sepenuh hati, siap membantu kebutuhan air minum Anda kapan saja.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan & Harga -->
+    <section class="py-20 bg-slate-50" id="layanan">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Pilihan <span class="text-primary">Produk & Layanan</span></h2>
+                <p class="text-slate-600">Pilih jenis air minum sesuai kebutuhan Anda. Kami menyediakan berbagai opsi dengan harga transparan.</p>
+            </div>
+
+            <!-- Produk Utama Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <!-- Produk 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-[0_0_15px_rgba(14,165,233,0.15)] border border-slate-200 hover:border-primary/50 hover:shadow-xl transition-all duration-300 reveal flex flex-col sm:flex-row group">
+                    <div class="sm:w-2/5 h-48 sm:h-auto relative bg-sky-50 border-b sm:border-b-0 sm:border-r border-slate-200 flex items-center justify-center p-0">
+                        <img src="gambarasset/katalog1.webp" alt="Air Mineral Biasa" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 sm:p-8 sm:w-3/5 flex flex-col justify-between relative bg-white">
+                        <!-- Decorative element -->
+                        <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-sky-50 to-transparent rounded-bl-3xl -z-10"></div>
+                        
+                        <div>
+                            <span class="text-xs font-bold tracking-wider text-primary uppercase mb-2 block bg-sky-50 inline-block px-2 py-1 rounded">Paling Populer</span>
+                            <h3 class="text-2xl font-bold text-dark mb-2">Air Mineral Standar</h3>
+                            <p class="text-slate-500 text-sm mb-4">Air minum jernih dan segar yang telah melewati proses filtrasi standar. Cocok untuk konsumsi harian keluarga.</p>
+                            <div class="flex items-end gap-2 mb-6 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                <span class="text-3xl font-bold text-primary">Rp 6.000<span class="text-sm text-slate-500 font-normal">/Galon</span></span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/6289529605601?text=Halo%20Depot%20Nirwana,%20saya%20mau%20pesan%20Air%20Mineral%20Standar" target="_blank" class="block w-full text-center bg-primary hover:bg-sky-600 text-white py-3 rounded-xl font-medium transition shadow-md shadow-sky-200">
+                            Pesan Ini
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produk 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-[0_0_15px_rgba(16,185,129,0.15)] border border-slate-200 hover:border-secondary/50 hover:shadow-xl transition-all duration-300 reveal delay-100 flex flex-col sm:flex-row group">
+                    <div class="sm:w-2/5 h-48 sm:h-auto relative bg-sky-50 border-b sm:border-b-0 sm:border-r border-slate-200 flex items-center justify-center p-0">
+                        <img src="gambarasset/katalog2.webp" alt="Air RO" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 sm:p-8 sm:w-3/5 flex flex-col justify-between relative bg-white">
+                         <!-- Decorative element -->
+                         <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-green-50 to-transparent rounded-bl-3xl -z-10"></div>
+
+                        <div>
+                            <span class="text-xs font-bold tracking-wider text-accent uppercase mb-2 block bg-green-50 inline-block px-2 py-1 rounded">Premium Quality</span>
+                            <h3 class="text-2xl font-bold text-dark mb-2">Air RO (Reverse Osmosis)</h3>
+                            <p class="text-slate-500 text-sm mb-4">Penyaringan tingkat tinggi yang menghasilkan air sangat murni. *[Ketersediaan tergantung lokasi]*</p>
+                            <div class="flex items-end gap-2 mb-6 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                <span class="text-3xl font-bold text-primary">Rp 10.000<span class="text-sm text-slate-500 font-normal">/Galon</span></span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/6289529605601?text=Halo%20Depot%20Nirwana,%20saya%20mau%20pesan%20Air%20RO" target="_blank" class="block w-full text-center bg-white border-2 border-primary text-primary hover:bg-softblue py-2.5 rounded-xl font-medium transition">
+                            Cek Ketersediaan
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Layanan Antar -->
+            <div class="bg-gradient-to-r from-sky-50 to-white rounded-3xl p-8 border border-sky-100 shadow-sm reveal">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/3 flex justify-center">
+                        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-inner border-4 border-sky-50 text-6xl text-primary">
+                            <i class="fas fa-truck-fast"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 text-center md:text-left">
+                        <h3 class="text-2xl font-bold text-dark mb-3">Layanan Antar Jemput Galon</h3>
+                        <p class="text-slate-600 mb-4">Kami siap mengantar pesanan ke rumah, kantor, atau tempat usaha Anda di area Palangka Raya.</p>
+                        <ul class="text-sm text-slate-600 space-y-2 mb-6 inline-block text-left">
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> Minimal Pemesanan: <strong>[Misal: 2 Galon]</strong></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> Area Pengantaran: <strong>[Sebutkan Area, cth: Radius 5KM]</strong></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i> Biaya Antar: <strong>[Gratis/Sebutkan Tarif]</strong></li>
+                        </ul>
+                        <div>
+                            <a href="https://wa.me/6289529605601" target="_blank" class="inline-flex items-center gap-2 text-primary font-semibold hover:text-sky-700 transition">
+                                Hubungi Kurir Kami <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Fasilitas & Proses -->
+    <section class="py-20 bg-white" id="fasilitas">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 reveal">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Fasilitas & <span class="text-primary">Proses Kami</span></h2>
+                    <p class="text-slate-600">Transparansi adalah komitmen kami. Lihat bagaimana kami menjaga kualitas dan kebersihan setiap tetes air yang Anda minum.</p>
+                </div>
+            </div>
+
+            <!-- Grid Galeri -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <!-- Foto 1 -->
+                <div class="col-span-2 row-span-2 group relative rounded-2xl overflow-hidden reveal">
+                    <img src="gambarasset/fasilitas1.webp" alt="Mesin Filtrasi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h4 class="text-white font-bold text-xl">Mesin Filtrasi Modern</h4>
+                        <p class="text-white/80 text-sm">Sistem penyaringan bertahap.</p>
+                    </div>
+                </div>
+                <!-- Foto 2 -->
+                <div class="group relative rounded-2xl overflow-hidden aspect-square reveal delay-100">
+                    <img src="gambarasset/fasilitas2.webp" alt="Tempat Cuci Galon" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <h4 class="text-white font-bold">Pencucian Bersih</h4>
+                    </div>
+                </div>
+                <!-- Foto 3 -->
+                <div class="group relative rounded-2xl overflow-hidden aspect-square reveal delay-200">
+                    <img src="gambarasset/fasilitas3.webp" alt="Pengisian Air" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <h4 class="text-white font-bold">Pengisian Higienis</h4>
+                    </div>
+                </div>
+                <!-- Foto 4 -->
+                <div class="col-span-2 md:col-span-1 group relative rounded-2xl overflow-hidden aspect-[2/1] md:aspect-square reveal delay-100">
+                    <img src="gambarasset/fasilitas4.webp" alt="Sterilisasi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <h4 class="text-white font-bold">Tahap Sterilisasi</h4>
+                    </div>
+                </div>
+                <!-- Foto 5 -->
+                <div class="col-span-2 md:col-span-1 group relative rounded-2xl overflow-hidden aspect-[2/1] md:aspect-square reveal delay-200">
+                    <img src="gambarasset/fasilitas5.webp" alt="Pengiriman" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <h4 class="text-white font-bold">Armada Siap Antar</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Testimoni -->
+    <section class="py-20 bg-slate-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Dipercaya oleh <span class="text-primary">Pelanggan Kami</span></h2>
+                <p class="text-slate-600">Apa kata mereka yang sudah berlangganan air minum di Depot Nirwana?</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 reveal relative">
+                    <div class="absolute top-6 right-8 text-6xl text-sky-100 font-serif opacity-50">"</div>
+                    <div class="flex items-center gap-1 text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 mb-6 relative z-10">"Airnya segar, tidak berbau, dan galonnya selalu bersih pas diantar. Pengirimannya juga cepat, sangat membantu buat stok di rumah."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center text-primary font-bold">A</div>
+                        <div>
+                            <h5 class="font-bold text-dark text-sm">Bapak Andi</h5>
+                            <p class="text-xs text-slate-400">Pelanggan Rumah Tangga</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 reveal delay-100 relative">
+                    <div class="absolute top-6 right-8 text-6xl text-sky-100 font-serif opacity-50">"</div>
+                    <div class="flex items-center gap-1 text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 mb-6 relative z-10">"Sudah langganan lama di Nirwana untuk kebutuhan air di warung makan saya. Harganya pas, pelayanannya ramah. Recomended."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-accent font-bold">S</div>
+                        <div>
+                            <h5 class="font-bold text-dark text-sm">Ibu Siti</h5>
+                            <p class="text-xs text-slate-400">Pemilik Usaha</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 reveal delay-200 relative">
+                    <div class="absolute top-6 right-8 text-6xl text-sky-100 font-serif opacity-50">"</div>
+                    <div class="flex items-center gap-1 text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="text-slate-600 mb-6 relative z-10">"Suka dengan kebersihan depotnya pas saya coba beli langsung ke sana. Sekarang mending pesan antar via WA, sangat praktis."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-500 font-bold">B</div>
+                        <div>
+                            <h5 class="font-bold text-dark text-sm">Budi</h5>
+                            <p class="text-xs text-slate-400">Warga Palangka Raya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white" id="faq">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl font-bold text-dark mb-4">Pertanyaan yang Sering <span class="text-primary">Diajukan</span></h2>
+            </div>
+
+            <div class="space-y-4 reveal">
+                <!-- FAQ Item 1 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 faq-item transition-all duration-300">
+                    <button class="w-full text-left px-6 py-4 font-semibold text-dark flex justify-between items-center focus:outline-none bg-white">
+                        Apakah melayani pengantaran ke rumah?
+                        <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="px-6 py-0 max-h-0 overflow-hidden transition-all duration-300 text-slate-600 text-sm">
+                        <p class="pb-4">Ya, kami menyediakan layanan antar galon. Anda cukup menghubungi kami via WhatsApp, informasikan jumlah pesanan dan alamat, tim kami akan segera mengantarkannya. [Sebutkan info tambahan misal: gratis ongkir radius X km].</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 faq-item transition-all duration-300">
+                    <button class="w-full text-left px-6 py-4 font-semibold text-dark flex justify-between items-center focus:outline-none bg-white">
+                        Berapa lama proses pengiriman?
+                        <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="px-6 py-0 max-h-0 overflow-hidden transition-all duration-300 text-slate-600 text-sm">
+                        <p class="pb-4">Proses pengiriman tergantung antrean pesanan, biasanya kami mengusahakan pesanan sampai dalam waktu [estimasi waktu, misal: 1-3 jam] setelah pesanan dikonfirmasi.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 faq-item transition-all duration-300">
+                    <button class="w-full text-left px-6 py-4 font-semibold text-dark flex justify-between items-center focus:outline-none bg-white">
+                        Apakah kebersihan galon terjamin?
+                        <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="px-6 py-0 max-h-0 overflow-hidden transition-all duration-300 text-slate-600 text-sm">
+                        <p class="pb-4">Kami memiliki standar operasional pencucian galon sebelum diisi ulang. Bagian luar dan dalam galon dibersihkan untuk memastikan tidak ada kotoran yang tersisa sebelum proses pengisian.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 faq-item transition-all duration-300">
+                    <button class="w-full text-left px-6 py-4 font-semibold text-dark flex justify-between items-center focus:outline-none bg-white">
+                        Jam berapa depot buka?
+                        <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="px-6 py-0 max-h-0 overflow-hidden transition-all duration-300 text-slate-600 text-sm">
+                        <p class="pb-4">Depot kami beroperasi setiap hari dari jam <strong>[Jam Buka]</strong> hingga <strong>[Jam Tutup]</strong>. Pesanan di luar jam operasional akan diproses pada hari berikutnya.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Maps -->
+    <section class="py-20 bg-slate-50" id="lokasi">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Lokasi <span class="text-primary">Kami</span></h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Kunjungi depot kami untuk melihat langsung proses higienis atau beli di tempat.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-4 md:p-8 shadow-xl border border-slate-100 reveal">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    
+                    <!-- Map Frame -->
+                    <div class="w-full lg:w-2/3 h-[400px] rounded-2xl overflow-hidden border-2 border-slate-100 relative">
+                        <!-- Placeholder for Google Maps Embed -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.820253579047!2d113.9113!3d-2.2045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMTInMTYuMiJTIDExM8KwNTQnNDAuNyJF!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            class="absolute inset-0 z-0">
+                        </iframe>
+                    </div>
+
+                    <!-- Location Info Card next to map on desktop, below on mobile -->
+                    <div class="w-full lg:w-1/3 flex flex-col justify-center">
+                        <div class="bg-sky-50 rounded-2xl p-6 border border-sky-100 h-full flex flex-col justify-center">
+                            <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-primary text-2xl mb-6 shadow-sm">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3 class="font-bold text-dark text-xl mb-3">Depot Air Nirwana</h3>
+                            <p class="text-slate-600 mb-6 leading-relaxed">
+                                [Alamat Lengkap Depot Nirwana, Kecamatan, Kelurahan], Palangka Raya, Kalimantan Tengah.
+                            </p>
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center gap-3 text-sm text-slate-600">
+                                    <i class="far fa-clock text-primary w-5 text-center"></i>
+                                    <span>Buka Setiap Hari: 07.00 - 21.00</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-sm text-slate-600">
+                                    <i class="fas fa-phone text-primary w-5 text-center"></i>
+                                    <span>0895-2960-5601</span>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com" target="_blank" class="inline-flex items-center justify-center gap-2 bg-dark hover:bg-slate-800 text-white font-medium px-6 py-3 rounded-xl transition w-full">
+                                Buka di Google Maps <i class="fas fa-external-link-alt text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-slate-300 pt-16 pb-8 border-t-4 border-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Brand Info -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="gambarasset/logo.webp" alt="Logo Depot Air Isi Ulang Nirwana" class="h-10 w-10 rounded opacity-90 object-cover">
+                        <span class="font-heading font-bold text-lg text-white">Nirwana</span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                        Menyediakan layanan air minum isi ulang yang higienis, bersih, dan segar untuk kebutuhan masyarakat Palangka Raya.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/6289529605601" target="_blank" class="w-10 h-10 rounded-full bg-transparent hover:bg-slate-800 flex items-center justify-center text-white transition-colors border border-slate-700 hover:border-slate-500">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/solusilokal.id/" target="_blank" class="w-10 h-10 rounded-full bg-transparent hover:bg-slate-800 flex items-center justify-center text-white transition-colors border border-slate-700 hover:border-slate-500">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@solusilokal.id" target="_blank" class="w-10 h-10 rounded-full bg-transparent hover:bg-slate-800 text-white flex items-center justify-center border border-slate-700 hover:border-slate-500 transition-colors">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tautan Cepat -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 font-heading">Menu Cepat</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#beranda" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fas fa-angle-right text-xs"></i> Beranda</a></li>
+                        <li><a href="#layanan" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fas fa-angle-right text-xs"></i> Harga & Layanan</a></li>
+                        <li><a href="#fasilitas" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fas fa-angle-right text-xs"></i> Fasilitas Depot</a></li>
+                        <li><a href="#tentang" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fas fa-angle-right text-xs"></i> Mengapa Kami</a></li>
+                        <li><a href="#faq" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fas fa-angle-right text-xs"></i> FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kontak -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-2">
+                    <h4 class="text-white font-bold mb-6 font-heading">Hubungi Kami</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                            <span>[Alamat Lengkap Depot Air Isi Ulang Nirwana], Palangka Raya, Kalimantan Tengah.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fab fa-whatsapp text-primary"></i>
+                            <a href="https://wa.me/6289529605601" class="hover:text-white transition-colors">0895-2960-5601 (Pemesanan)</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="far fa-clock text-primary"></i>
+                            <span>Jam Buka: [Jam Operasional, cth: Senin - Minggu (07.00 - 21.00)]</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-slate-700/50 pt-8 mt-4 mx-4 md:mx-0 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; 2026 Depot Air Isi Ulang Nirwana. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">
+                    Developed by <a href="https://www.solusilokal.id/" target="_blank" class="text-primary hover:text-white transition-colors font-medium">SolusiLokal</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Mobile Menu Toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const nav = document.getElementById('navbar');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu on click
+            const mobileLinks = menu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+
+            // Navbar background on scroll
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    nav.classList.add('shadow-sm');
+                    nav.classList.replace('bg-transparent', 'glass-nav');
+                } else {
+                    nav.classList.remove('shadow-sm');
+                    // Reset to glass-nav mostly for aesthetics at top too, but can adjust if needed
+                }
+            });
+
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const btn = item.querySelector('button');
+                const content = item.querySelector('div');
+                const icon = item.querySelector('i');
+
+                btn.addEventListener('click', () => {
+                    const isOpen = content.style.maxHeight;
+
+                    // Close all others
+                    faqItems.forEach(otherItem => {
+                        otherItem.querySelector('div').style.maxHeight = null;
+                        otherItem.querySelector('i').style.transform = 'rotate(0deg)';
+                        otherItem.querySelector('button').classList.remove('text-primary');
+                    });
+
+                    if (!isOpen) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        icon.style.transform = 'rotate(180deg)';
+                        btn.classList.add('text-primary');
+                    }
+                });
+            });
+
+            // Scroll Reveal Animation (Intersection Observer)
+            const revealElements = document.querySelectorAll('.reveal');
+
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => {
+                revealOnScroll.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
